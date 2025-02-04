@@ -20,5 +20,4 @@ jobs:
             next_patch=$((patch+1))
             new_version="${major}.${minor}.${next_patch}-snapshot"
             jq ".version = \"$new_version\"" package.json > tmp.$$.json && mv tmp.$$.json package.json
-            echo '${{ new_version }}'
           fi
