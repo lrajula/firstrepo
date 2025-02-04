@@ -4,11 +4,10 @@ on:
     branches:
       - develop
 
-
-bump-version:
+jobs:
+  bump-version:
     runs-on: ubuntu-latest
     needs: build
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
