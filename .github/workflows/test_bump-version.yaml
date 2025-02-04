@@ -2,7 +2,7 @@ name: Jfrog Trigger minor release in feature to develop
 on:
   push:
     branches:
-      - develop
+      - lrajula-patch-1
 
 jobs:
   bump-version:
