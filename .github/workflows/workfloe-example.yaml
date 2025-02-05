@@ -1,0 +1,12 @@
+name: Jfrog Trigger snapshot release while opening pr from develop to main
+run-name: Trigger dev snapshot Release by @${{ github.actor }} when pr is open from develop to main
+on:
+  workflow_dispatch:
+    inputs:
+      semver-bump:
+        description: "Increment the version of the npm release in dev snapshot and this will be considered prod release version further"
+        type: choice
+        options:
+          - major
+          - minor
+          - patch
