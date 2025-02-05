@@ -13,11 +13,4 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Set next snapshot version
-        run: |
-          if [ "${{ github.ref }}" == "refs/heads/main" ]; then
-            version=$(node -p "require('./package.json').version")
-            IFS='.' read -r major minor patch <<< "$version"
-            next_patch=$((patch+1))
-            new_version="${major}.${minor}.${next_patch}-snapshot"
-            jq ".version = \"$new_version\"" package.json > tmp.$$.json && mv tmp.$$.json package.json
-          fi
+        run: echo "This is a manually triggered workflow."
